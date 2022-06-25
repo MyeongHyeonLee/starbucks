@@ -64,7 +64,7 @@ new Swiper('.promotion .swiper-container',{
   spaceBetween: 10, // 슬라이드 사이 여백
   centeredSlides: true, // 1번 슬라이드가 가운데 보이기
   loop: true,
-  // autoplay: {
+  autoplay: true, //{
   //   delay: 50000
   // }
   pagination: {
@@ -77,6 +77,19 @@ new Swiper('.promotion .swiper-container',{
     
   }
 });
+new Swiper('.awards .swiper-container', {
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5,
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next'
+  }
+});
+
+
+
 
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
@@ -128,3 +141,7 @@ spyEls.forEach(function (spyEl){
     .addTo(new ScrollMagic.Controller());
 
 });
+
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear(); //textContent는 글자내용들을 알아내거나 지정하는 것
